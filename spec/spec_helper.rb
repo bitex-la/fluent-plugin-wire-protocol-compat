@@ -1,6 +1,7 @@
 require 'bundler/setup'
 Bundler.require :default, :development
 require 'drb'
+Test::Unit::AutoRunner.need_auto_run = false
 require 'fluent/test'
 
 Socket.instance_eval do
