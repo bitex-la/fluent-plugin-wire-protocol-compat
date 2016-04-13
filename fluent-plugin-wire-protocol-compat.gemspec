@@ -8,7 +8,7 @@ Gem::Specification.new do |spec|
   spec.authors       = ["Tomás Rojas"]
   spec.email         = ["tmsrjs@gmail.com"]
 
-  spec.summary       = %q{Adds in_forward wire protocol support to in_udp, in_tcp and in_tail}
+  spec.summary       = %q{Adds in_forward wire protocol support to in_udp and in_tcp}
   spec.homepage      = "https://github.com/bitex-la/fluent-plugin-wire-protocol-compat"
 
   spec.files         = `git ls-files -z`.split("\x0").reject { |f| f.match(%r{^(test|spec|features)/}) }
