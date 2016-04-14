@@ -13,9 +13,9 @@ module MiscHelpers
   def start_supervisor(conf)
     @supervisor_pid = fork do
       supervisor = Fluent::Supervisor.new(plugin_dirs: [ ],
-        libs: [ ], use_v1_config: false, supervise: false)
+        libs: [ ], use_v1_config: true, supervise: false)
       supervisor.instance_eval {
-        @conf = Fluent::Config.parse(conf, '(test)', '(test_dir)', false)
+        @conf = Fluent::Config.parse(conf, '(test)', '(test_dir)', @use_v1_config)
       }
       supervisor.send(:set_system_config)
       supervisor.send(:init_engine)

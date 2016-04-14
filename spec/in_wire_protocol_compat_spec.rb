@@ -14,9 +14,9 @@ describe Fluent::WireProtocolCompatInput do
   before :each do
     start_supervisor(<<-CONFIG)
       <source>
-        type wire_protocol_compat
+        @type wire_protocol_compat
         <input>
-          type udp
+          @type udp
           port #{port}
           bind 127.0.0.1
           format json
@@ -25,7 +25,7 @@ describe Fluent::WireProtocolCompatInput do
       </source>
 
       <match **>
-        type test
+        @type test
       </match>
     CONFIG
   end

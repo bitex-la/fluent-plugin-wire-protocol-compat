@@ -9,7 +9,7 @@ module Fluent
 
       @inputs = [ ]
       config.each_element('input') do |input_config|
-        type = input_config.delete('type')
+        type = input_config.delete('@type')
         next unless [ 'udp', 'tcp' ].include? type
         base_input = Plugin.new_input(type).class
         input_klass = Class.new(base_input) do
